@@ -1,7 +1,7 @@
 printf "Ingresa tu usuario de Github: "
 #Leer variable
 read GITHUB_USER
-#consular url
+#consultar url
 info=$(curl "https://api.github.com/users/${GITHUB_USER}")
 #impresion mensaje
 printf "Hola $(echo "$info" | jq '.login'). User ID: $(echo "$info" | jq '.id'). Cuenta fue creada el: $(echo "$info" | jq '.created_at')." 
